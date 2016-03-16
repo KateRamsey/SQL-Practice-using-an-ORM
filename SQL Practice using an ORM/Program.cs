@@ -23,7 +23,7 @@ namespace SQL_Practice_using_an_ORM
                 new SalesPeople(6, "Isabelle"),
                 new SalesPeople(7, "Judah")
             };
-            
+
             List<Sales> sales = new List<Sales>()
             {
                 new Sales(1, 1, 2846, new DateTime(2015, 10, 15)),
@@ -48,7 +48,12 @@ namespace SQL_Practice_using_an_ORM
                 db.Insert(s);
             }
 
-            new List<SalesWithPeople> = db.Query<SalesWithPeople>("select * from sales join Salespeople on sales.SalespeopleID = salespeople.id");
+            //foreach (var v in db.Query<SalesWithPeople>("select * from sales join Salespeople on sales.SalespeopleID = salespeople.id"))
+            //{
+            //    Console.WriteLine(v);
+            //}
+            // Should write to screen the information for each sale, crashes with unhandled exception
+
 
             Console.ReadLine();
         }
