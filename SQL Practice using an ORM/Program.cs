@@ -38,8 +38,6 @@ namespace SQL_Practice_using_an_ORM
                 new Sales(10, 7, 9703, new DateTime(2014, 07, 03))
             };
 
-
-
             var db = new PetaPoco.Database("dbstring");
             foreach (var s in SalesPeople)
             {
@@ -50,6 +48,9 @@ namespace SQL_Practice_using_an_ORM
                 db.Insert(s);
             }
 
+            new List<SalesWithPeople> = db.Query<SalesWithPeople>("select * from sales join Salespeople on sales.SalespeopleID = salespeople.id");
+
+            Console.ReadLine();
         }
     }
 }
