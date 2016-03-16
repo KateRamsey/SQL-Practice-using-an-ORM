@@ -1,8 +1,8 @@
 ﻿namespace SQL_Practice_using_an_ORM
 {
-    public class SalesPerson
+    public class SalesPeople
     {
-        public SalesPerson(int id, string name)
+        public SalesPeople(int id, string name)
         {
             ID = id;
             Name = name;

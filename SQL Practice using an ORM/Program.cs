@@ -13,23 +13,27 @@ namespace SQL_Practice_using_an_ORM
         static void Main(string[] args)
         {
 
-            List<SalesPerson> SalesPeople = new List<SalesPerson>();
-            SalesPeople.Add(new SalesPerson(1, "Decon"));
-            SalesPeople.Add(new SalesPerson(2, "Edan"));
-            SalesPeople.Add(new SalesPerson(3, "Yardley"));
-            SalesPeople.Add(new SalesPerson(4, "Farrah"));
-            SalesPeople.Add(new SalesPerson(5, "Jessamine"));
-            SalesPeople.Add(new SalesPerson(6, "Isabelle"));
-            SalesPeople.Add(new SalesPerson(7, "Judah"));
+            List<SalesPeople> SalesPeople = new List<SalesPeople>
+            {
+                new SalesPeople(1, "Decon"),
+                new SalesPeople(2, "Edan"),
+                new SalesPeople(3, "Yardley"),
+                new SalesPeople(4, "Farrah"),
+                new SalesPeople(5, "Jessamine"),
+                new SalesPeople(6, "Isabelle"),
+                new SalesPeople(7, "Judah")
+            };
+
+
+
 
             var db = new PetaPoco.Database("dbstring");
-
-
-            var article = new SalesPerson();
+            foreach (var s in SalesPeople)
             {
-
-
+                db.Insert(s);
             }
+
+
         }
     }
 }

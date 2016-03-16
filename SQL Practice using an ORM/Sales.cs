@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace SQL_Practice_using_an_ORM
 {
-    public class Sale
+    public class Sales
     {
-        public Sale(int id, int salespersonid, decimal pretaxamount, DateTime saledate)
+        public Sales(int id, int salespersonid, decimal pretaxamount, DateTime saledate)
         {
             ID = id;
             SalespeopleID = salespersonid;

@@ -50,8 +50,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sale.cs" />
-    <Compile Include="SalesPerson.cs" />
+    <Compile Include="Sales.cs" />
+    <Compile Include="SalesPeople.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
