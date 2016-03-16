@@ -13,7 +13,7 @@ namespace SQL_Practice_using_an_ORM
         static void Main(string[] args)
         {
 
-            var db = new PetaPoco.Database("connectionStringName");
+            var db = new PetaPoco.Database("dbstring");
 
 
             var article = new SalesPerson();
