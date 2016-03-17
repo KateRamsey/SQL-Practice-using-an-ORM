@@ -48,11 +48,15 @@ namespace SQL_Practice_using_an_ORM
                 db.Insert(s);
             }
 
-            //foreach (var v in db.Query<SalesWithPeople>("select * from sales join Salespeople on sales.SalespeopleID = salespeople.id"))
-            //{
-            //    Console.WriteLine(v);
-            //}
+            foreach (var v in db.Query<SalesWithPeople>("select * from sales join Salespeople on sales.SalespeopleID = salespeople.id"))
+            {
+                Console.WriteLine(v);
+            }
             // Should write to screen the information for each sale, crashes with unhandled exception
+            foreach (var s in db.Query<Sales>("select * from sales"))
+            {
+                Console.WriteLine(s);
+            }
 
 
             Console.ReadLine();

@@ -4,6 +4,10 @@ namespace SQL_Practice_using_an_ORM
 {
     internal class SalesWithPeople
     {
+        public SalesWithPeople()
+        {
+            
+        }
         public SalesWithPeople(int saleid, int salespeopleid, decimal pretaxamount, DateTime saledate, string name)
         {
             SaleId = saleid;
@@ -17,5 +21,7 @@ namespace SQL_Practice_using_an_ORM
         public decimal PreTaxAmount { get; set; }
         public DateTime SaleDate { get; set; }
         public string Name { get; set; }
+
+
     }
 }

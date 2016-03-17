@@ -2,6 +2,8 @@
 {
     public class SalesPeople
     {
+        public SalesPeople()
+        { }
         public SalesPeople(int id, string name)
         {
             ID = id;
