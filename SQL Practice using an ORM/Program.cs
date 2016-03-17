@@ -63,11 +63,15 @@ namespace SQL_Practice_using_an_ORM
                 Console.WriteLine(s.Name);
             }
 
-            foreach (var s in db.Query<Sales>("Select max(PreTaxAmount) from Sales"))
+            foreach (var s in db.Query<SaleAmount>("Select min(PreTaxAmount) as PreTaxAmount from Sales"))
             {
                 Console.WriteLine(s.PreTaxAmount);
             }
 
+            foreach (var s in db.Query<SaleAmount>("Select max(PreTaxAmount) as PreTaxAmount from Sales"))
+            {
+                Console.WriteLine(s.PreTaxAmount);
+            }
 
             Console.ReadLine();
         }
