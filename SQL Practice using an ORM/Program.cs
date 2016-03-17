@@ -39,6 +39,7 @@ namespace SQL_Practice_using_an_ORM
             };
 
             var db = new PetaPoco.Database("dbstring");
+
             foreach (var s in SalesPeople)
             {
                 db.Insert(s);
@@ -52,7 +53,7 @@ namespace SQL_Practice_using_an_ORM
             {
                 Console.WriteLine(v);
             }
-            // Should write to screen the information for each sale, crashes with unhandled exception
+
             foreach (var s in db.Query<Sales>("select * from sales"))
             {
                 Console.WriteLine(s);
@@ -65,12 +66,12 @@ namespace SQL_Practice_using_an_ORM
 
             foreach (var s in db.Query<SaleAmount>("Select min(PreTaxAmount) as PreTaxAmount from Sales"))
             {
-                Console.WriteLine(s.PreTaxAmount);
+                Console.WriteLine($"Min Pre-tax amount is {s.PreTaxAmount}");
             }
 
             foreach (var s in db.Query<SaleAmount>("Select max(PreTaxAmount) as PreTaxAmount from Sales"))
             {
-                Console.WriteLine(s.PreTaxAmount);
+                Console.WriteLine($"Max Pre-tax amount is {s.PreTaxAmount}");
             }
 
             Console.ReadLine();
