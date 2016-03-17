@@ -22,6 +22,9 @@ namespace SQL_Practice_using_an_ORM
         public DateTime SaleDate { get; set; }
         public string Name { get; set; }
 
-
+        public override string ToString()
+        {
+            return $"{this.SaleId}, {SalespeopleID}, {PreTaxAmount}, {SaleDate}, {Name}";
+        }
     }
 }
