@@ -11,19 +11,19 @@ namespace SQL_Practice_using_an_ORM
         }
         public Sales(int id, int salespersonid, decimal pretaxamount, DateTime saledate)
         {
-            ID = id;
+            SaleID = id;
             SalespeopleID = salespersonid;
             PreTaxAmount = pretaxamount;
             SaleDate = saledate;
         }
-        public int ID { get; set; }
+        public int SaleID { get; set; }
         public int SalespeopleID { get; set; }
         public decimal PreTaxAmount { get; set; }
         public DateTime SaleDate { get; set; }
 
         public override string ToString()
         {
-            return $"Id = {ID}, SalespeopleID = {SalespeopleID}, PreTaxAmount = {PreTaxAmount}, SaleDate = {SaleDate}";
+            return $"Id = {SaleID}, SalespeopleID = {SalespeopleID}, PreTaxAmount = {PreTaxAmount}, SaleDate = {SaleDate}";
         }
     }
 }
