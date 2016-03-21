@@ -21,6 +21,7 @@ namespace SQL_Practice_using_an_ORM
         public decimal PreTaxAmount { get; set; }
         public DateTime SaleDate { get; set; }
         public string Name { get; set; }
+        public int Days { get; set; }
 
         public override string ToString()
         {

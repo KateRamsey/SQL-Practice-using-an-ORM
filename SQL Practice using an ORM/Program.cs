@@ -86,6 +86,13 @@ namespace SQL_Practice_using_an_ORM
             {
                 Console.WriteLine($"{s.Name} has sold {s.PreTaxAmount:C}");
             }
+            Console.WriteLine();
+
+
+            foreach (var s in db.Query<SalesWithPeople>("select datediff(DAY, Min(saledate),Max(saledate)) as Days from sales"))
+            {
+                Console.WriteLine($"Difference in first and last sale is {s.Days} days");
+            }
 
 
             Console.ReadLine();
