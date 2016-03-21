@@ -94,6 +94,12 @@ namespace SQL_Practice_using_an_ORM
                 Console.WriteLine($"Difference in first and last sale is {s.Days} days");
             }
 
+            Console.WriteLine("Sales per month report:");
+            foreach (var s in db.Query<MonthAndSales>("select month(saledate) as Month, count(*) as NumOfSales from sales group by month(SaleDate)"))
+            {
+                Console.WriteLine($"Month {s.Month} had {s.NumOfSales} sales");
+            }
+
 
             Console.ReadLine();
         }
