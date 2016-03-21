@@ -79,6 +79,14 @@ namespace SQL_Practice_using_an_ORM
             {
                 Console.WriteLine($"Max Pre-tax sale amount is {s.PreTaxAmount:C}");
             }
+            Console.WriteLine();
+
+            Console.WriteLine("Sale People Total Sales Report:");
+            foreach (var s in db.Query<SalesWithPeople>("Select sum(PreTaxAmount) as PreTaxAmount, Salespeople.Name as Name from Sales join Salespeople on Salespeople.ID = Sales.SalesPeopleID group by Salespeople.name"))
+            {
+                Console.WriteLine($"{s.Name} has sold {s.PreTaxAmount:C}");
+            }
+
 
             Console.ReadLine();
         }
