@@ -111,10 +111,18 @@ namespace SQL_Practice_using_an_ORM
                 totalSalesTax += s.SalesTax;
             }
             Console.WriteLine($" {totalSalesTax:C}");
+            Console.WriteLine();
 
+            List<int> IDsToDelete = db.Query<SalesPeople>("select ID from salespeople where name = 'Deacon'").Select(d => d.ID).ToList();
 
+            foreach (var i in from i in IDsToDelete from p in db.Query<Sales>($"delete from sales where SalesPeopleID = {i}") select i)
+            {
+            }
 
-
+            foreach (var d in db.Query<SalesPeople>("delete from salespeople where name = 'Deacon'"))
+            {
+            }
+            Console.WriteLine("Deleted Deacon");
 
 
             Console.ReadLine();
