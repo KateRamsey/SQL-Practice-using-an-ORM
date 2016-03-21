@@ -23,7 +23,7 @@ namespace SQL_Practice_using_an_ORM
 
         public override string ToString()
         {
-            return $"{SaleID}, {SalespeopleID}, {PreTaxAmount}, {SaleDate}";
+            return $"Sale ID:{SaleID}, PreTax Amount: {PreTaxAmount:C}, Date:{SaleDate:d}";
         }
     }
 }

@@ -49,29 +49,35 @@ namespace SQL_Practice_using_an_ORM
                 db.Insert(s);
             }
 
+            Console.WriteLine("Sales Information:");
             foreach (var v in db.Query<SalesWithPeople>("select * from sales join Salespeople on sales.SalespeopleID = salespeople.id"))
             {
                 Console.WriteLine(v);
             }
+            Console.WriteLine();
 
-            foreach (var s in db.Query<Sales>("select * from sales"))
-            {
-                Console.WriteLine(s);
-            }
+            //Console.WriteLine("Sales Information:");
+            //foreach (var s in db.Query<Sales>("select * from sales"))
+            //{
+            //    Console.WriteLine(s);
+            //}
 
+            Console.WriteLine("Active Sales People:");
             foreach (var s in db.Query<SalesPeople>("select name from salesPeople"))
             {
                 Console.WriteLine(s.Name);
             }
+            Console.WriteLine();
+
 
             foreach (var s in db.Query<SaleAmount>("Select min(PreTaxAmount) as PreTaxAmount from Sales"))
             {
-                Console.WriteLine($"Min Pre-tax amount is {s.PreTaxAmount}");
+                Console.WriteLine($"Min Pre-tax sale amount is {s.PreTaxAmount:C}");
             }
 
             foreach (var s in db.Query<SaleAmount>("Select max(PreTaxAmount) as PreTaxAmount from Sales"))
             {
-                Console.WriteLine($"Max Pre-tax amount is {s.PreTaxAmount}");
+                Console.WriteLine($"Max Pre-tax sale amount is {s.PreTaxAmount:C}");
             }
 
             Console.ReadLine();
