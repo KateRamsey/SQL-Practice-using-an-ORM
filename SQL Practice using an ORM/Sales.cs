@@ -21,6 +21,8 @@ namespace SQL_Practice_using_an_ORM
         public decimal PreTaxAmount { get; set; }
         public DateTime SaleDate { get; set; }
 
+        public decimal SalesTax { get; set; }
+
         public override string ToString()
         {
             return $"Sale ID:{SaleID}, PreTax Amount: {PreTaxAmount:C}, Date:{SaleDate:d}";

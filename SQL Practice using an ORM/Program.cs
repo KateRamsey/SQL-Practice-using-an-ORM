@@ -56,12 +56,6 @@ namespace SQL_Practice_using_an_ORM
             }
             Console.WriteLine();
 
-            //Console.WriteLine("Sales Information:");
-            //foreach (var s in db.Query<Sales>("select * from sales"))
-            //{
-            //    Console.WriteLine(s);
-            //}
-
             Console.WriteLine("Active Sales People:");
             foreach (var s in db.Query<SalesPeople>("select name from salesPeople"))
             {
@@ -100,7 +94,16 @@ namespace SQL_Practice_using_an_ORM
             {
                 Console.WriteLine($"Month {s.Month} had {s.NumOfSales} sales");
             }
+            Console.WriteLine();
 
+            Console.Write("Total Sales tax (at 6%):");
+            decimal totalSalesTax = 0m;
+            foreach (var s in db.Query<Sales>("select * from sales"))
+            {
+                s.SalesTax = decimal.Multiply(s.PreTaxAmount, 0.06m);
+                totalSalesTax += s.SalesTax;
+            }
+            Console.WriteLine($" {totalSalesTax:C}");
 
             Console.ReadLine();
         }
