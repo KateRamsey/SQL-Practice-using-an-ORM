@@ -15,7 +15,7 @@ namespace SQL_Practice_using_an_ORM
 
             List<SalesPeople> SalesPeople = new List<SalesPeople>
             {
-                new SalesPeople(1, "Decon"),
+                new SalesPeople(1, "Deacon"),
                 new SalesPeople(2, "Edan"),
                 new SalesPeople(3, "Yardley"),
                 new SalesPeople(4, "Farrah"),
@@ -104,6 +104,11 @@ namespace SQL_Practice_using_an_ORM
                 totalSalesTax += s.SalesTax;
             }
             Console.WriteLine($" {totalSalesTax:C}");
+
+
+
+
+
 
             Console.ReadLine();
         }
