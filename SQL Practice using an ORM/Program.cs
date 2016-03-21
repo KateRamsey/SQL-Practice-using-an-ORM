@@ -92,7 +92,14 @@ namespace SQL_Practice_using_an_ORM
             Console.WriteLine("Sales per month report:");
             foreach (var s in db.Query<MonthAndSales>("select month(saledate) as Month, count(*) as NumOfSales from sales group by month(SaleDate)"))
             {
-                Console.WriteLine($"{s.MonthName()} had {s.NumOfSales} sales");
+                if (s.NumOfSales > 1)
+                {
+                    Console.WriteLine($"{s.MonthName()} had {s.NumOfSales} sales");
+                }
+                else
+                {
+                    Console.WriteLine($"{s.MonthName()} had {s.NumOfSales} sale");
+                }
             }
             Console.WriteLine();
 
